@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources 'player'
   resources 'user'
 
-  root 'games#index'
+  root 'home#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
