@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamification</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<nav>
+  <ul>
+    <li>
+      <%= link_to "Game", game_index_path %>
+    </li>
+    <li>
+      <%#= link_to "Board", board_index_path %>
+    </li>
+    <li>
+      <%= link_to "Move", move_index_path %>
+    </li>
+    <li>
+      <%= link_to "Player", player_index_path %>
+    </li>
+    <li>
+      <%= link_to "User", user_index_path %>
+    </li>
+  </ul>
+</nav>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
