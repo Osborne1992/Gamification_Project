@@ -26,9 +26,13 @@ class MovesController < ApplicationController
   end
 
   private
-
   def find_move
     Move.find(params[:id])
+  end
+
+  private
+  def move_params
+    params.require(:move).permit(:player, :square, :symbol)
   end
 
 end

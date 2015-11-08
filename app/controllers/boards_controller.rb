@@ -1,5 +1,4 @@
 class BoardsController < ApplicationController
-  has_many :moves
 
   def new
     @board = Board.new

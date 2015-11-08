@@ -4,10 +4,4 @@ class HomeController < ApplicationController
 
   end
 
-  g = Game.new
-
-  until g.finished?
-    
-  end
-
 end

@@ -1,6 +1,4 @@
 class PlayersController < ApplicationController
-  
-  has_many :moves
 
   def new
     @player = Player.new
@@ -8,13 +6,13 @@ class PlayersController < ApplicationController
 
   def create
     Player.create(player_params)
-    redirect_to(players_path)
+    redirect_to(player_index_path)
   end
 
   def destroy
     player = find_player
     player.destroy
-    redirect_to(players_path)
+    redirect_to(player_index_path)
   end
 
   def edit
@@ -24,12 +22,16 @@ class PlayersController < ApplicationController
   def update
     player = find_player
     player.update(player_params)
-    redirect_to(players_path)
+    redirect_to(player_index_path)
   end
 
   private
   def find_player
     Player.find(params[:id])
+  end
+
+  def player_params
+    params.require(:player).permit(:player1, :playera)
   end
 
 end
