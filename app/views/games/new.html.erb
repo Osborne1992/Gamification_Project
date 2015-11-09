@@ -1,0 +1,11 @@
+<%= form_for @game do |f| %>
+  <%= f.label :player1_id, "Player 1:" %>
+  <%= f.text_field :player1_id %>
+  <br>
+  <br>
+  <%= f.label :player2_id, "Player 2:" %>
+  <%= f.text_field :player2_id %>
+  <br>
+  <br>
+  <%= f.submit "New Game" %>
+<% end %>

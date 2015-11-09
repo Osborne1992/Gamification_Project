@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources 'game'
-  resources 'move'
-  resources 'player'
-  resources 'user'
+  resources 'games'
+  resources 'moves'
+  resources 'players'
+  resources 'users'
 
   root 'home#index'
 
