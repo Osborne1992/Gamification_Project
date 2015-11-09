@@ -5,5 +5,49 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <br>
-  <%= link_to "GAAAAAMES", games_path %>
+  <div id="board">
+    <table>
+      <tr id="row1">
+        <td class="square"><center>
+          <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+          <%= link_to 'login', new_user_session_path, class: "button" %>
+          <% end %>
+        </center></td>
+        <td class="square v"><center>
+          <% if user_signed_in? %>
+          <strong><p>Profile</p></strong>
+          <% else %>
+          <%= link_to 'register', new_user_registration_path %>
+          <% end %>
+        </center></td>
+        <td class="square"><center>
+          <strong><p>Friends List</p></strong>
+        </center></td>
+      </tr>
+      <tr id="row2">
+        <td class="square h"><center>
+          <strong><p>HighScores</p></strong>
+        </center></td>
+        <td class="square v h"><center>
+          <%= link_to "New Game", games_path %>
+        </center></td>
+        <td class="square h"><center>
+          <strong><p>Tournaments</p></strong>
+        </center></td>
+      </tr>
+      <tr id="row3">
+        <td class="square"><center>
+          <strong><p>BETA GAMES</p></strong>
+        </center></td>
+        <td class="square v"><center>
+          <strong><p>Spectate Games</p></strong>
+        </center></td>
+        <td class="square"><center>
+          <strong><p>Settings</p></strong>
+        </center></td>
+      </tr>
+    </table>
+  </div>
 </center>

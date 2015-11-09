@@ -1,6 +1,10 @@
 <%= form_for @game do |f| %>
   <%= f.label :player1_id, "Player 1:" %>
+  <% if player1_id.persisted? %>
+  <%= player1_id.try(:name||:email) %>
+  <% else %>
   <%= f.text_field :player1_id %>
+  <% end %>
   <br>
   <br>
   <%= f.label :player2_id, "Player 2:" %>
