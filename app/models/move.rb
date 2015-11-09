@@ -1,11 +1,8 @@
 class Move < ActiveRecord::Base
 
-  attr_reader :player, :square, :symbol
+  belongs_to :player, class_name: "User"
+  belongs_to :game
 
-  def initialize(player, square, symbol)
-    @player = player
-    @square = square
-    @symbol = symbol
-  end
+
 
 end
