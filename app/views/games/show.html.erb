@@ -1,61 +1,62 @@
-
 <center>
-<h1>LET'S GET READY TO RUMBLE!</h1>
+  <h1>LET'S GET READY TO RUMBLE!</h1>
+  
   <div id="board">
-    <table>
-      <tr id="row1">
-        <td class="square">
-          <center>
-            <%= button_to '', {action: :update, params: {make_move: 0}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square v">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 1}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 2}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-      </tr>
-      <tr id="row2">
-        <td class="square h">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 3}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square v h">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 4}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square h">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 5}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-      </tr>
-      <tr id="row3">
-        <td class="square">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 6}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square v">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 7}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-        <td class="square">
-          <center>
-          <%= button_to '', {action: :update, params: {make_move: 9}}, method: :patch, class: "TTTButton" %>
-          </center>
-        </td>
-      </tr>
-    </table>
-  </div>
+      <table>
+        <tr id="row1">
+          <td class="square">
+            <center>
+                <%= button_to '', {action: :update, params: {square: 0}}, method: :patch, class: "TTTButton" if !@game.has_move_at_square(0) %>
+            </center>
+          </td>
+          <td class="square v">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 1}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+          <td class="square">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 2}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+        </tr>
+        <tr id="row2">
+          <td class="square h">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 3}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+          <td class="square v h">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 4}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+          <td class="square h">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 5}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+        </tr>
+        <tr id="row3">
+          <td class="square">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 6}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+          <td class="square v">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 7}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+          <td class="square">
+            <center>
+            <%= button_to '', {action: :update, params: {square: 9}}, method: :patch, class: "TTTButton" %>
+            </center>
+          </td>
+        </tr>
+      </table>
+    </div>
+
   <p>Player 1 is... <%= current_user.username %>!</p>
   <p>Player 2 is... <%#= player2_id.name %>!</p>
 </center>

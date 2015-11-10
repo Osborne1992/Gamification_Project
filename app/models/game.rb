@@ -29,22 +29,12 @@ class Game < ActiveRecord::Base
     end
   end
 
+  def has_move_at_square(square)
+    moves.any? { |move| move.square == square }
+  end
+
     def make_move(player, square)
-    # if square < 0
-    #   puts "Your move was too low, Doofus!"
-    #   puts "Hit enter to try again"
-    #   gets
-    # elsif square > 8
-    #   puts "Your move was too high, Doofus!"
-    #   puts "Hit enter to try again"
-    #   gets
-    # elsif board[square] 
-    #   puts "Your move has already been played, Doofus!"
-    #   puts "Hit enter to try again"
-    #   gets
-    # else
-    Move.new(player: player, square: square, symbol: symbol_for_player(player), game: self)
-    # end
+    Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
     end
 
   # if player1.empty?
