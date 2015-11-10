@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   def role?(role_to_compare_to)
    role_to_compare_to.to_s == self.role.try(:name).to_s
- end
+  end
 
  private
  

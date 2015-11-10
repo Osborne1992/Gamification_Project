@@ -1,21 +1,61 @@
-:player2_id, User.all.map { |p| [p.name, p.id] }
 
-<div id="board">
-  <table>
-    <tr id="row1">
-      <td class="square"></td>
-      <td class="square v"></td>
-      <td class="square"></td>
-    </tr>
-    <tr id="row2">
-      <td class="square h"></td>
-      <td class="square v h"></td>
-      <td class="square h"></td>
-    </tr>
-    <tr id="row3">
-      <td class="square"></td>
-      <td class="square v"></td>
-      <td class="square"></td>
-    </tr>
-  </table>
-</div>
+<center>
+<h1>LET'S GET READY TO RUMBLE!</h1>
+  <div id="board">
+    <table>
+      <tr id="row1">
+        <td class="square">
+          <center>
+            <%= button_to '', {action: :update, params: {make_move: 0}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square v">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 1}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 2}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+      </tr>
+      <tr id="row2">
+        <td class="square h">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 3}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square v h">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 4}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square h">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 5}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+      </tr>
+      <tr id="row3">
+        <td class="square">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 6}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square v">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 7}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+        <td class="square">
+          <center>
+          <%= button_to '', {action: :update, params: {make_move: 9}}, method: :patch, class: "TTTButton" %>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p>Player 1 is... <%= current_user.username %>!</p>
+  <p>Player 2 is... <%#= player2_id.name %>!</p>
+</center>

@@ -1,6 +1,5 @@
 <center>
-  <h1>HERM</h1>
-  <br>
+  <h1>Gamification Hub</h1>
   <br>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
@@ -10,16 +9,16 @@
       <tr id="row1">
         <td class="square"><center>
           <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <%= link_to "Logout #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
-          <%= link_to 'login', new_user_session_path, class: "button" %>
+          <%= link_to 'Login', new_user_session_path %>
           <% end %>
         </center></td>
         <td class="square v"><center>
           <% if user_signed_in? %>
-          <strong><p>Profile</p></strong>
+          <%= link_to 'Profile', user_path(current_user.id) %>
           <% else %>
-          <%= link_to 'register', new_user_registration_path %>
+          <%= link_to 'Register', new_user_registration_path %>
           <% end %>
         </center></td>
         <td class="square"><center>
@@ -31,7 +30,7 @@
           <strong><p>HighScores</p></strong>
         </center></td>
         <td class="square v h"><center>
-          <%= link_to "New Game", games_path %>
+          <%= link_to "New Game", new_game_path %>
         </center></td>
         <td class="square h"><center>
           <strong><p>Tournaments</p></strong>
@@ -45,9 +44,11 @@
           <strong><p>Spectate Games</p></strong>
         </center></td>
         <td class="square"><center>
-          <strong><p>Settings</p></strong>
+          <%= link_to "Spectate", games_path %>
         </center></td>
       </tr>
     </table>
   </div>
+  <br>
+  <p>If there are any fields you cannot select. You either lack permission to view them or they are not implemented yet!</p>
 </center>

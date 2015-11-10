@@ -1,15 +1,27 @@
-<%= form_for @game do |f| %>
+<center>
+  <h2>Choose an Opponent!</h2>
+  <br>
+  <%= form_for @game do |f| %>
+  <div class='mfleft'>
   <%= f.label :player1_id, "Player 1:" %>
+  </div>
+  <div class='mfright'>
   <% if user_signed_in? %>
-  <%= current_user.email %>
+  <%= current_user.username %>
   <% else %>
   <%= f.text_field :player1_id %>
   <% end %>
+  </div>
   <br>
   <br>
+  <div class='mfleft'>
   <%= f.label :player2_id, "Player 2:" %>
-  <%= f.text_field :player2_id %>
+  </div>
+  <div class='mfright'>
+  <%= f.select :player2_id, User.all.map { |u| [u.username, u.id] } %>
+  </div>
   <br>
   <br>
-  <%= f.submit "New Game" %>
-<% end %>
+  <%= f.submit "Start Game" %>
+  <% end %>
+</center>

@@ -45,7 +45,7 @@ class Game < ActiveRecord::Base
     # else
     Move.new(player: player, square: square, symbol: symbol_for_player(player), game: self)
     # end
-  end
+    end
 
   # if player1.empty?
   #   player1 = "Player 1"
@@ -59,10 +59,10 @@ class Game < ActiveRecord::Base
   #   playerA = "#{player2}2"
   # end
 
-  # def whose_turn
-  #   return player1 if moves.empty?
-  #   moves.last.player == player1 ? player2 : player1
-  # end
+  def whose_turn
+    return player1 if moves.empty?
+    moves.last.player == player1 ? player2 : player1
+  end
 
   private
   def empty_board

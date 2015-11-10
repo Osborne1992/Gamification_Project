@@ -13,14 +13,14 @@
         <%= link_to "Home", root_path %>
       </li>
       <li>
-        <%= link_to "User", users_path %>
+        <%= link_to "Profile", user_path(current_user.id) %>
       </li>
     </ul>
   </nav>
 </center>
 <body>
-
-  <%= yield %>
-
+  <div class="wrap">
+    <%= yield %>
+  </div>
 </body>
 </html>
