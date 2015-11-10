@@ -93,6 +93,6 @@
       </table>
     </div>
 
-  <p>Player 1 is... <%= current_user.username %>!</p>
-  <p>Player 2 is... <%#= player2_id.name %>!</p>
+  <p>Player 1 is... <%= @game.player1.try(:username) %>!</p>
+  <p>Player 2 is... <%= @game.player2.try(:username) %>!</p>
 </center>
