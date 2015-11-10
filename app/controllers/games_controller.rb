@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @game.player1_id = current_user.id
   end
 
   def create
