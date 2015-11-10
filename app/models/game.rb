@@ -33,9 +33,13 @@ class Game < ActiveRecord::Base
     moves.any? { |move| move.square == square }
   end
 
-    def make_move(player, square)
-    Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
-    end
+  def move_at_square(square)
+    moves.find { |move| move.square == square }
+  end
+
+  def make_move(player, square)
+  Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
+  end
 
   # if player1.empty?
   #   player1 = "Player 1"

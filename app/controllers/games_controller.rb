@@ -16,7 +16,7 @@ class GamesController < ApplicationController
 
   def update
     game = Game.find(params[:id])
-    game.make_move(@player, @square)
+    game.make_move(current_user, params[:square])
     redirect_to(game_path(game))
   end
 

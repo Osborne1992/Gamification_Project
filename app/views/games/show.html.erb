@@ -6,51 +6,87 @@
         <tr id="row1">
           <td class="square">
             <center>
-                <%= button_to '', {action: :update, params: {square: 0}}, method: :patch, class: "TTTButton" if !@game.has_move_at_square(0) %>
+              <% if @game.has_move_at_square(0) %>
+                <%= @game.move_at_square(0).symbol %>
+              <% else %>
+                <%= button_to '', {action: :update, params: {square: 0}}, method: :patch, class: "TTTButton" %>
+              <% end %>
             </center>
           </td>
           <td class="square v">
             <center>
-            <%= button_to '', {action: :update, params: {square: 1}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(1) %>
+              <%= @game.move_at_square(1).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 1}}, method: :patch, class: "TTTButton" %>
+              <% end %>
             </center>
           </td>
           <td class="square">
             <center>
-            <%= button_to '', {action: :update, params: {square: 2}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(2) %>
+              <%= @game.move_at_square(2).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 2}}, method: :patch, class: "TTTButton" %>
+              <% end %>
             </center>
           </td>
         </tr>
         <tr id="row2">
           <td class="square h">
             <center>
-            <%= button_to '', {action: :update, params: {square: 3}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(3) %>
+              <%= @game.move_at_square(3).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 3}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
           <td class="square v h">
             <center>
-            <%= button_to '', {action: :update, params: {square: 4}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(4) %>
+              <%= @game.move_at_square(4).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 4}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
           <td class="square h">
             <center>
-            <%= button_to '', {action: :update, params: {square: 5}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(5) %>
+              <%= @game.move_at_square(5).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 5}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
         </tr>
         <tr id="row3">
           <td class="square">
             <center>
-            <%= button_to '', {action: :update, params: {square: 6}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(6) %>
+              <%= @game.move_at_square(6).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 6}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
           <td class="square v">
             <center>
-            <%= button_to '', {action: :update, params: {square: 7}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(7) %>
+              <%= @game.move_at_square(7).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 7}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
           <td class="square">
             <center>
-            <%= button_to '', {action: :update, params: {square: 9}}, method: :patch, class: "TTTButton" %>
+            <% if @game.has_move_at_square(8) %>
+              <%= @game.move_at_square(8).symbol %>
+            <% else %>
+              <%= button_to '', {action: :update, params: {square: 8}}, method: :patch, class: "TTTButton"  %>
+            <% end %>
             </center>
           </td>
         </tr>
