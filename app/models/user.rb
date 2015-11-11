@@ -18,8 +18,23 @@ class User < ActiveRecord::Base
    role_to_compare_to.to_s == self.role.try(:name).to_s
   end
 
+  def games
+    games_as_player1 + games_as_player2
+  end
+
+  def win_count
+    games.select { |game| game.winning_player?(self) }.count
+  end
+
+  def lose_count
+    games.select { |game| game.losing_player?(self) }.count
+  end
+
+  def draw_count
+    games.select { |game| game.drawn_game? }.count
+  end
+
  private
- 
  def set_default_role
    self.role ||= Role.find_by_name('registered')
  end

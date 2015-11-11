@@ -11,6 +11,10 @@ class Game < ActiveRecord::Base
     winning_game? || drawn_game?
   end
 
+  def drawn_game?
+    moves.size == 9
+  end
+
   def winning_player?(player)
     winning_game? && moves.last.player == player
   end
@@ -80,11 +84,6 @@ class Game < ActiveRecord::Base
     !!WINNING_LINES.detect do |winning_line|
       %w(XXX OOO).include?(winning_line.map { |e| board[e] }.join)
     end
-  end
-
-  private
-  def drawn_game?
-    moves.size == 9
   end
 
   private
