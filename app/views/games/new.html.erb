@@ -1,26 +1,24 @@
 <center>
-  <h2>Choose an Opponent!</h2>
+  <h1>Pick a Combatant!</h1>
   <br>
   <%= form_for @game do |f| %>
-  <div class='mfleft'>
-  <%= f.label :player1_id, "Player 1:" %>
-  </div>
-  <div class='mfright'>
-  <% if user_signed_in? %>
-  <%= current_user.username %>
-  <%= f.hidden_field :player1_id %>
-  <% else %>
-  <%= f.text_field :player1_id %>
-  <% end %>
-  </div>
-  <br>
-  <br>
-  <div class='mfleft'>
-  <%= f.label :player2_id, "Player 2:" %>
-  </div>
-  <div class='mfright'>
-  <%= f.collection_select :player2_id, User.all.reject {|user| user == current_user}, :id, :username %>
-  </div>
+  <table>
+    <tr>
+      <td align="right"><%= f.label :player1_id, "You are Player 1:" %></td>
+      <td>
+        <% if user_signed_in? %>
+          <%= current_user.username %>
+          <%= f.hidden_field :player1_id %>
+        <% else %>
+          <%= f.text_field :player1_id %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><br /><%= f.label :player2_id, "Pick Player 2:" %></td>
+      <td><br /><%= f.collection_select :player2_id, User.all.reject {|user| user == current_user}, :id, :username %></td>
+    </tr>
+  </table>
   <br>
   <br>
   <%= f.submit "Start Game" %>

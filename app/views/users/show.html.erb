@@ -1,27 +1,24 @@
 <center>
-  <h3>Your Profile</h3>
+  <h2>Your Profile</h2>
   <br>
-  <div class='mfleft'>
-  Username: 
-  </div>
-  <div class='mfright'>
-  <%= current_user.username %>
-  </div>
+  <table>
+    <tr>
+      <td align="right">Username: </td>
+      <td></td>
+      <td><%= current_user.username %></td>
+    </tr>
+    <tr>
+      <td align="right">Name: </td>
+      <td></td>
+      <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+    </tr>
+    <tr>
+      <td align="right">Email: </td>
+      <td></td>
+      <td><%= current_user.email %></td>
+    </tr>
+  </table>
   <br>
-  <div class='mfleft'>
-  Name: 
-  </div>
-  <div class='mfright'>
-  <%= current_user.first_name %> <%= current_user.last_name %>
-  </div>
-  <br>
-  <br>
-  <div class='mfleft'>
-  Email: 
-  </div>
-  <div class='mfright'>
-  <%= current_user.email %>
-  </div>
   <br>
   <%= link_to 'Edit Your Login Details', edit_user_registration_path %>
 </center>

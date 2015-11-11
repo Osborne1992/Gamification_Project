@@ -1,1 +1,6 @@
-<%= link_to("#{game.id} - #{game}", game_path(game)) %><br />
+<tr class="lines">
+  <td align="center", class="gamelist h"><br /><%= link_to "View Game #{game.id}", game_path(game) %></td>
+  <td align="center", class="gamelist v h"><br /><%= game.player1.try(:username) %></td>
+  <td align="center", class="gamelist v h"><br /><%= game.player2.try(:username) %></td>
+  <td align="center", class="gamelist h"><br /><%= game.created_at.strftime("%-d %b %Y") %></td>
+</tr>

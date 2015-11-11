@@ -1,7 +1,15 @@
 <center>
-  <h1>TERCTARCTUUR</h1>
+  <h1>Tic Tac Toe List</h1>
 
-<p>See the games in progress or completed here!</p>
+<p>See the games in progress or completed here (in descending order)!</p>
 
-<%= render @games %>
+<table class="showdividers">
+  <tr>
+    <th class="gamelist">Game ID</th>
+    <th class="gamelist v">Who is Player 1</th>
+    <th class="gamelist v">Who is Player 2</th>
+    <th class="gamelist">Match Made On</th>
+  </tr>
+    <%= render @games %>
+</table>
 </center>
