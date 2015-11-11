@@ -1,6 +1,12 @@
-<%= @users do |user| %>
-<%= user.username %><br />
-<%= user.first_name %> <%= user.last_name %>
-<br>
-<br>
-<% end %>
+<center>
+  <h1>Users on Gamification</h1>
+  <br>
+  <table>
+    <tr>
+      <th class="gamelist">Username</th>
+      <th class="gamelist">Name</th>
+      <th class="gamelist">Rank</th>
+    </tr>
+    <%= render @users %>
+  </table>
+</center>

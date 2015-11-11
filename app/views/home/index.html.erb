@@ -9,7 +9,8 @@
       <tr id="row1">
         <td class="square m"><center>
           <% if user_signed_in? %>
-          <%= link_to "Logout #{current_user.username}", destroy_user_session_path, method: :delete %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %><br />
+          <strong><%= current_user.username %></strong>
           <% else %>
           <%= link_to 'Login', new_user_session_path %>
           <% end %>

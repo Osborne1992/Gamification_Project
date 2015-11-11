@@ -4,6 +4,11 @@
   <h2>
     <%= @game.result %>
   </h2>
+    <% if @game.winning_player?(current_user) %>
+      <%= audio_tag 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Fanfare.wav', autoplay: true, controls: false %>
+    <% elsif @game.losing_player?(current_user) %>
+      <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
+    <% end %>
   <br>
   <div id="board">
       <table>

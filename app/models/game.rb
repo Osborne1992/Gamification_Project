@@ -11,6 +11,14 @@ class Game < ActiveRecord::Base
     winning_game? || drawn_game?
   end
 
+  def winning_player?(player)
+    winning_game? && moves.last.player == player
+  end
+
+  def losing_player?(player)
+    winning_game? && moves.last.player != player
+  end
+
   def result
     case
     when winning_game?
@@ -38,10 +46,14 @@ class Game < ActiveRecord::Base
     moves.find { |move| move.square == square }
   end
 
-  def make_move(player, square)
-    if move_check(player) == true then
-  Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
-    else
+  def make_move(player, square)  
+    if move_check(player)
+      Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
+    end
+    p = whose_turn
+    if p.username == "SkyNET - Computer" && !finished?
+      square = board.each_with_index.map { |s, i| s ? nil : i }.compact.sample
+      Move.create!(player: p, square: square, symbol: symbol_for_player(p), game: self)
     end
   end
 
@@ -52,6 +64,10 @@ class Game < ActiveRecord::Base
 
   def move_check(player)
     player == whose_turn
+  end
+
+  def can_make_move?(player)
+    move_check(player) && !finished?
   end
 
   private
