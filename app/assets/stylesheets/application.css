@@ -19,6 +19,21 @@ li {
   display: inline;
 }
 
+.nava {
+  color: #000;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.menubuttons {
+  height: 100px;
+  width: 100px;
+  text-decoration: none;
+  color: #000;
+}
+
 .square{
     width:100px;
     height:100px;

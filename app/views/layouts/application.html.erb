@@ -10,11 +10,11 @@
   <nav>
     <ul>
       <li>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path, class: "nava" %>
       </li>
       <li>
         <% if user_signed_in? %>
-        <%= link_to "Profile", user_path(current_user.id) %>
+        <%= link_to "Profile", user_path(current_user.id), class: "nava" %>
         <% else %>
         <% end %>
       </li>

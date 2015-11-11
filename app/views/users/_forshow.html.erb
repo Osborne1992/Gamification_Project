@@ -1,0 +1,5 @@
+<% current_user.games.each do |game| %>
+<tr>
+  <td><%= link_to "Game: #{game.id}, Against: #{if game.player1 == current_user then game.player2.try(:username) else game.player1.try(:username) end}, Created: #{game.created_at.strftime('%-d %b %Y')}, #{game.result}", game %></td>
+</tr>
+<% end %>
