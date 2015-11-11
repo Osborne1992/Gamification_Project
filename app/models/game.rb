@@ -51,7 +51,7 @@ class Game < ActiveRecord::Base
       Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
     end
     p = whose_turn
-    if p.username == "SkyNET - Computer" && !finished?
+    if p.username == "SkyNET(AI)" && !finished?
       square = board.each_with_index.map { |s, i| s ? nil : i }.compact.sample
       Move.create!(player: p, square: square, symbol: symbol_for_player(p), game: self)
     end

@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-['registered', 'banned', 'moderator', 'admin'].each do |role|
+['Registered', 'Banned', 'Moderator', 'Admin', 'Robit'].each do |role|
   Role.find_or_create_by({name: role})
 end
 
 User.delete_all
-User.create!(email: "Osbot@simonosborne.co.uk", username: "SkyNET - Computer", first_name: "Skye", last_name: "Nethaniel", password: "password", password_confirmation: "password", role_id: 3)
+User.create!(email: "Osbot@simonosborne.co.uk", username: "SkyNET(AI)", first_name: "Skye", last_name: "Nethaniel", password: "password", password_confirmation: "password", role_id: 5)
 User.create!(email: "S.Osborne1992@gmail.com", username: "Osborne1992", first_name: "Simon", last_name: "Osborne", password: "password", password_confirmation: "password", role_id: 4)
 User.create!(email: "SRC_Osborne1992@hotmail.co.uk", username: "Ossy", first_name: "Simon", last_name: "Osborne", password: "password", password_confirmation: "password", role_id: 4)
 User.create!(email: "Osinaut@gmail.com", username: "Osinaut", first_name: "Simon", last_name: "Osborne", password: "password", password_confirmation: "password", role_id: 4)
