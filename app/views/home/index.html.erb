@@ -7,44 +7,44 @@
   <div id="board">
     <table>
       <tr id="row1">
-        <td class="square"><center>
+        <td class="square m"><center>
           <% if user_signed_in? %>
           <%= link_to "Logout #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
           <%= link_to 'Login', new_user_session_path %>
           <% end %>
         </center></td>
-        <td class="square v"><center>
+        <td class="square v m"><center>
           <% if user_signed_in? %>
           <%= link_to 'Profile', user_path(current_user.id) %>
           <% else %>
           <%= link_to 'Register', new_user_registration_path %>
           <% end %>
         </center></td>
-        <td class="square"><center>
+        <td class="square m"><center>
           <strong><p>Friends List</p></strong>
         </center></td>
       </tr>
       <tr id="row2">
-        <td class="square h"><center>
+        <td class="square h m"><center>
           <strong><p>HighScores</p></strong>
         </center></td>
-        <td class="square v h"><center>
+        <td class="square v h m"><center>
           <%= link_to "New Game", new_game_path %>
         </center></td>
-        <td class="square h"><center>
+        <td class="square h m"><center>
           <strong><p>Tournaments</p></strong>
         </center></td>
       </tr>
       <tr id="row3">
-        <td class="square"><center>
+        <td class="square m"><center>
           <strong><p>BETA GAMES</p></strong>
         </center></td>
-        <td class="square v"><center>
-          <strong><p>Spectate Games</p></strong>
-        </center></td>
-        <td class="square"><center>
+        <td class="square v m"><center>
           <%= link_to "Spectate", games_path %>
+        </center></td>
+        <td class="square m"><center>
+          <strong><p>Settings</p></strong>
         </center></td>
       </tr>
     </table>

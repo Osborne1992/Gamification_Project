@@ -35,6 +35,10 @@ li {
     border-bottom:1px solid #000;
 }
 
+.m{
+  font-size: 17px;
+}
+
 .TTTButton {
   width: 95px;
   height: 95px;
