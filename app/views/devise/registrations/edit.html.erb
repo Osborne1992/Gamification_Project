@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td align="right"><%= f.label :email, "Email: " %></td>
-      <td><%= f.email_field :email, autofocus: true %></td>
+      <td><%= f.email_field :email %></td>
     </tr>
     <br>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

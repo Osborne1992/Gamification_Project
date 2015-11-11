@@ -3,37 +3,39 @@
   <br>
   <table>
     <tr>
-      <td align="right">Name:</td>
-      <td align="right"> </td>
-      <td align="right"></td>
+      <td align="right" style='padding: 0px 5px 0px 5px'>Name:</td>
       <td><%= current_user.first_name %> <%= current_user.last_name %></td>
     </tr>
     <tr>
-      <td align="right">Email: </td>
-      <td align="right"></td>
-      <td align="right"></td>
+      <td align="right" style='padding: 0px 5px 0px 5px'>Email: </td>
       <td><%= current_user.email %></td>
     </tr>
   </table>
   <br>
-    <h5><%= link_to 'Edit Your Login Details', edit_user_registration_path %></h5>
+    <h5><%= link_to 'Edit Your Login Details', edit_user_registration_path, class: "nava" %></h5>
   <br>
   <table>
     <tr>
       <th colspan="4">Games of Tic Tac Toe</th>
     </tr>
     <tr>
-      <td><br />Played: <%= current_user.games.count %></td>
-      <td><br />Won: <%= current_user.win_count %></td>
-      <td><br />Drawn: <%= current_user.draw_count %></td>
-      <td><br />Lost: <%= current_user.lose_count %></td>
+      <td style='padding: 0px 5px 0px 5px'><br />Played: <%= current_user.games.count %></td>
+      <td style='padding: 0px 5px 0 5px'><br />Won: <%= current_user.win_count %></td>
+      <td style='padding: 0px 5px 0 5px'><br />Drawn: <%= current_user.draw_count %></td>
+      <td style='padding: 0px 5px 0px 5px'><br />Lost: <%= current_user.lose_count %></td>
     </tr>
   </table>
   <br>
   <br>
   <table>
     <tr>
-      <th>Games Played and/or Playing!</th>
+      <th colspan="4">Games Played and/or Playing!</th>
+    </tr>
+    <tr>
+      <th class="gamelist">Game ID</th>
+      <th class="gamelist">Opponent</th>
+      <th class="gamelist">Created on</th>
+      <th class="gamelist">Result</th>
     </tr>
     <%= render partial: "forshow" %>
   </table>
