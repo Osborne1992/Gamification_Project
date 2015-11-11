@@ -47,7 +47,7 @@
   </table>
   <br>
   <div class="actions">
-    <%= f.submit "Update" %> <%= link_to "Cancel", :back %>
+    <%= f.submit "Update", class: "nava" %> <%= link_to "Cancel", :back, class: "nava" %>
   </div>
   <% end %>
   
@@ -58,7 +58,7 @@
   <table>
     <tr>
       <td>Unhappy with this site?</td>
-      <td><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></td>
+      <td><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "nava" %></td>
     </tr>
   </table>
 
