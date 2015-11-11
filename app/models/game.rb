@@ -13,7 +13,7 @@ class Game < ActiveRecord::Base
   def result
     case
     when winning_game?
-      "#{moves.last.player} won!"
+      "#{moves.last.player.username} won!"
     when drawn_game?
       "It is a draw!"
     else 
@@ -41,18 +41,6 @@ class Game < ActiveRecord::Base
   Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
   end
 
-  # if player1.empty?
-  #   player1 = "Player 1"
-  # end
-  # if player2.empty?
-  #   playerA = "Player 2"
-  # end
-
-  # if player1 == player2
-  #   player1 = "#{player1}1"
-  #   playerA = "#{player2}2"
-  # end
-
   def whose_turn
     return player1 if moves.empty?
     moves.last.player == player1 ? player2 : player1
@@ -72,7 +60,7 @@ class Game < ActiveRecord::Base
 
   private
   def drawn_game?
-    move.size == 9
+    moves.size == 9
   end
 
   private
