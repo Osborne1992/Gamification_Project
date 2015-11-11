@@ -19,8 +19,7 @@
   <%= f.label :player2_id, "Player 2:" %>
   </div>
   <div class='mfright'>
-  <%= f.collection_select :player2_id, User.all, :id, :username %>
-  <%#= f.select :player2_id, User.all.map { |u| [u.username, u.id] } %>
+  <%= f.collection_select :player2_id, User.all.reject {|user| user == current_user}, :id, :username %>
   </div>
   <br>
   <br>

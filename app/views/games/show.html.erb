@@ -3,6 +3,9 @@
   <br>
   <h2>
     <%= @game.result %>
+    <% if @game.result.winning_game? %>
+      
+    <% end %>
   </h2>
   <br>
   <div id="board">
@@ -10,94 +13,64 @@
         <tr id="row1">
           <td class="square">
             <center>
-              <% if @game.has_move_at_square(0) %>
-                <%= @game.move_at_square(0).symbol %>
-              <% else %>
-                <%= button_to '', {action: :update, params: {square: 0}}, method: :patch, class: "TTTButton" %>
-              <% end %>
+            <%= board_square_contents(@game, 0) %>
             </center>
           </td>
           <td class="square v">
             <center>
-            <% if @game.has_move_at_square(1) %>
-              <%= @game.move_at_square(1).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 1}}, method: :patch, class: "TTTButton" %>
-              <% end %>
+            <%= board_square_contents(@game, 1) %>
             </center>
           </td>
           <td class="square">
             <center>
-            <% if @game.has_move_at_square(2) %>
-              <%= @game.move_at_square(2).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 2}}, method: :patch, class: "TTTButton" %>
-              <% end %>
+            <%= board_square_contents(@game, 2) %>
             </center>
           </td>
         </tr>
         <tr id="row2">
           <td class="square h">
             <center>
-            <% if @game.has_move_at_square(3) %>
-              <%= @game.move_at_square(3).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 3}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+              <%= board_square_contents(@game, 3) %>
             </center>
           </td>
           <td class="square v h">
             <center>
-            <% if @game.has_move_at_square(4) %>
-              <%= @game.move_at_square(4).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 4}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+            <%= board_square_contents(@game, 4) %>
             </center>
           </td>
           <td class="square h">
             <center>
-            <% if @game.has_move_at_square(5) %>
-              <%= @game.move_at_square(5).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 5}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+            <%= board_square_contents(@game, 5) %>
             </center>
           </td>
         </tr>
         <tr id="row3">
           <td class="square">
             <center>
-            <% if @game.has_move_at_square(6) %>
-              <%= @game.move_at_square(6).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 6}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+            <%= board_square_contents(@game, 6) %>
             </center>
           </td>
           <td class="square v">
             <center>
-            <% if @game.has_move_at_square(7) %>
-              <%= @game.move_at_square(7).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 7}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+            <%= board_square_contents(@game, 7) %>
             </center>
           </td>
           <td class="square">
             <center>
-            <% if @game.has_move_at_square(8) %>
-              <%= @game.move_at_square(8).symbol %>
-            <% else %>
-              <%= button_to '', {action: :update, params: {square: 8}}, method: :patch, class: "TTTButton"  %>
-            <% end %>
+            <%= board_square_contents(@game, 8) %>
             </center>
           </td>
         </tr>
       </table>
     </div>
-    <br>
-  <div class='mfleft'>Playing X, Player 1 - </div> <div class='mfright'><%= @game.player1.try(:username) %>!</div>
-  <br>
-  <div class='mfleft'>Playing O, Player 2 -</div> <div class='mfright'><%= @game.player2.try(:username) %>!</div>
+    <table>
+      <tr>
+        <td><h4>Playing X, Player 1 is...</h4></td>
+        <td><h4><%= @game.player1.try(:username) %>!</h4></td>
+      </tr>
+      <tr>
+        <td><h4>Playing O, Player 2 is...</h4></td>
+        <td><h4><%= @game.player2.try(:username) %>!</h4></td>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </center>

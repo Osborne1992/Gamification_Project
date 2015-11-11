@@ -4,6 +4,7 @@ class Game < ActiveRecord::Base
   belongs_to :player2, class_name: "User"
   has_many :moves
 
+
   WINNING_LINES = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6] ]
 
   def finished?
@@ -38,12 +39,19 @@ class Game < ActiveRecord::Base
   end
 
   def make_move(player, square)
+    if move_check(player) == true then
   Move.create(player: player, square: square, symbol: symbol_for_player(player), game: self)
+    else
+    end
   end
 
   def whose_turn
     return player1 if moves.empty?
     moves.last.player == player1 ? player2 : player1
+  end
+
+  def move_check(player)
+    player == whose_turn
   end
 
   private
