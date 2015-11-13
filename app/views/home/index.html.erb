@@ -27,22 +27,22 @@
       </tr>
       <tr id="row2">
         <td class="square h m b"><center>
-          <strong><p>HighScores</p></strong>
+          <strong><p class="menutext">HighScores</p></strong>
         </center></td>
         <td class="square v h m"><center>
           <% if user_signed_in? %>
             <strong><%= link_to "New Game", new_game_path, class: "menubuttons" %></strong>
           <% else %>
-            <strong><p>Log In to Start a Game</p></strong>
+            <strong><p class="menutext">Log In to Start a Game</p></strong>
           <% end %>
         </center></td>
         <td class="square h m b"><center>
-          <strong><p>Tournaments</p></strong>
+          <strong><p class="menutext">Tournaments</p></strong>
         </center></td>
       </tr>
       <tr id="row3">
         <td class="square m b"><center>
-          <strong><p>BETA GAMES</p></strong>
+          <strong><p class="menutext">BETA GAMES</p></strong>
         </center></td>
         <td class="square v m"><center>
           <strong><%= link_to "Spectate", games_path, class: "menubuttons" %></strong>

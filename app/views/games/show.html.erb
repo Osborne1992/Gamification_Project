@@ -1,6 +1,5 @@
 <center>
   <h1>LET'S GET READY TO RUMBLE!</h1>
-  <br>
   <h2>
     <%= @game.result %>
   </h2>
@@ -9,7 +8,6 @@
     <% elsif @game.losing_player?(current_user) %>
       <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
     <% end %>
-  <br>
   <div id="board">
       <table>
         <tr id="row1">

@@ -1,5 +1,5 @@
 <tr>
-  <td align="left"><br /><%= user.role.name %></td>
+  <td align="left"><br /><%= user.role.try(:name) %></td>
   <td align="center"><br /><%= user.username %></td>
   <td align="center"><br /><%= user.win_count %>/<%= user.draw_count %>/<%= user.lose_count %></td>
 </tr>

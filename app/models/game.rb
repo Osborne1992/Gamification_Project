@@ -23,6 +23,10 @@ class Game < ActiveRecord::Base
     winning_game? && moves.last.player != player
   end
 
+  def my_turn?(player)
+    whose_turn && moves.last.player == player
+  end
+
   def result
     case
     when winning_game?
