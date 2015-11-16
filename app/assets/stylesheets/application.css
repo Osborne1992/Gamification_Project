@@ -40,35 +40,15 @@ li {
   font-family: Audiowide;
 }
 
-.menubuttons {
-display: table;
-  }  
-
-.menubuttons a {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  border: none;
-  background: none;
-  font-size: 15px;
-  height: 125px;
-  width: 125px;
-  transition: all 1s;
+.edit_profile {
   text-decoration: none;
-}
-
-.menubuttons:hover {
-  animation: neon5 2s ease-in-out infinite alternate;
-}
-
-.menubuttons:hover {
-  color: #ffffff;
-}
-
-.menulinks {
+  font-size: 10px;
+  padding: 3px;
+  border: 1px solid #FF9900;
+  border-radius: 4px;
   background: none;
-  border: none;
-  text-decoration: none;
+  color: #FF9900;
+  font-family: Audiowide;
 }
 
 .square{
@@ -93,6 +73,44 @@ display: table;
 
 table {
   border-collapse: collapse; 
+}
+
+.menubuttons a {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  height: 125px;
+  width: 125px;
+  transition: all 1s;
+  text-decoration: none;
+}
+
+.menubuttons p {
+  font-size: 16px;
+  height: 125px;
+  width: 125px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.menubuttons:hover {
+  animation: neon5 2s ease-in-out infinite alternate;
+}
+
+.menubuttons:hover {
+  color: #ffffff;
+}
+
+.menulinks {
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+.tablealign {
+  text-align: center;
 }
 
 .TTTButton {
@@ -137,6 +155,7 @@ a {
   color: #FF9900;
   font-family: Audiowide;
   transition: all 1s;
+  text-decoration: none;
 }
 
 p {

@@ -3,26 +3,30 @@
   <br>
   <table>
     <tr>
-      <td align="right" style='padding: 0px 5px 0px 5px'>Name:</td>
-      <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+      <td align="right" style="width:150px">Name:</td>
+      <td style="width:10px"></td>
+      <td style="width:380px"><%= current_user.first_name %> <%= current_user.last_name %></td>
     </tr>
     <tr>
-      <td align="right" style='padding: 0px 5px 0px 5px'>Email: </td>
-      <td><%= current_user.email %></td>
+      <td align="right" style="width:150px">Email:</td>
+      <td style="width:10px"></td>
+      <td style="width:380px"><%= current_user.email %></td>
     </tr>
   </table>
   <br>
-    <h5><%= link_to 'Edit Your Login Details', edit_user_registration_path, class: "nava" %></h5>
+    <h5><%= link_to 'Edit Your Login Details', edit_user_registration_path, class: "edit_profile" %></h5>
   <br>
   <table>
     <tr>
-      <th colspan="4">Games of Tic Tac Toe</th>
+      <th colspan="6">Games of Tic Tac Toe</th>
     </tr>
     <tr>
-      <td style="width:100px"><br /><center>Played: <%= current_user.games.count %></center></td>
-      <td style="width:100px"><br /><center>Won: <%= current_user.win_count %></center></td>
-      <td style="width:100px"><br /><center>Drawn: <%= current_user.draw_count %></center></td>
-      <td style="width:100px"><br /><center>Lost: <%= current_user.lose_count %></center></td>
+      <td style="width:110px" class="tablealign"><br />W/L - <%= current_user.win_count.to_f / current_user.lose_count.to_f %></td>
+      <td style="width:80px" class="tablealign"><br />P - <%= current_user.games.count %></td>
+      <td style="width:80px" class="tablealign"><br />W - <%= current_user.win_count %></td>
+      <td style="width:80px" class="tablealign"><br />D - <%= current_user.draw_count %></td>
+      <td style="width:80px" class="tablealign"><br />L - <%= current_user.lose_count %></td>
+      <td style="width:110px" class="tablealign"><br />Pts - <%= current_user.win_count.to_i * 3 + current_user.draw_count.to_i %></td>
     </tr>
   </table>
   <br>
@@ -32,10 +36,10 @@
       <th colspan="4">Games Played and/or Playing!</th>
     </tr>
     <tr>
-      <th class="gamelist" style="width:75px; font-size:12px">Game ID</th>
-      <th class="gamelist" style="width:125px; font-size:12px">Opponent</th>
-      <th class="gamelist" style="width:125px; font-size:12px">Created on</th>
-      <th class="gamelist" style="width:225px; font-size:12px">Result</th>
+      <th class="gamelist" style="width:75px; font-size:12px"><br />Game ID</th>
+      <th class="gamelist" style="width:125px; font-size:12px"><br />Opponent</th>
+      <th class="gamelist" style="width:125px; font-size:12px"><br />Created on</th>
+      <th class="gamelist" style="width:225px; font-size:12px"><br />Result</th>
     </tr>
     <%= render partial: "forshow" %>
   </table>

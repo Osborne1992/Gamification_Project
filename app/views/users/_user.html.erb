@@ -1,5 +1,12 @@
 <tr>
-  <td align="left"><br /><%= user.role.try(:name) %></td>
-  <td align="center"><br /><%= user.username %></td>
+  <td align="center"><br /><%= link_to user.username, user_path(user) %></td>
+  <td align="center"><br /><%= user.win_count.to_i * 3 + user.draw_count.to_i %></td>
+  <td align="center"><br />
+    <% if user.lose_count.to_i == 0 %>
+      ∞
+    <% else %>
+      <%=  (user.win_count.to_f / user.lose_count.to_f).round(2) %>
+    <% end %>  
+  </td>
   <td align="center"><br /><%= user.win_count %>/<%= user.draw_count %>/<%= user.lose_count %></td>
 </tr>

@@ -10,48 +10,46 @@
           <% if user_signed_in? %>
             <%= link_to "Logout \n #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
-            <strong><%= link_to 'Login', new_user_session_path, class: "menulinks" %></strong>
+            <strong><%= link_to 'Login', new_user_session_path %></strong>
           <% end %>
         </td>
-        <td class="square v m"><center>
+        <td class="square v m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to 'Profile', user_path(current_user.id), class: "menulinks" %></strong>
+            <strong><%= link_to 'Profile', user_path(current_user.id) %></strong>
           <% else %>
-            <strong><%= link_to 'Register', new_user_registration_path, class: "menulinks" %></strong>
+            <strong><%= link_to 'Register', new_user_registration_path %></strong>
           <% end %>
-        </center></td>
-        <td class="square m"><center>
-          <strong><%= link_to 'Player List', users_path, class: "menulinks" %></strong>
-        </center></td>
+        </td>
+        <td class="square m menubuttons">
+          <strong><p>Friend List</p></strong>
+        </td>
       </tr>
       <tr id="row2">
-        <td class="square h m b"><center>
-          <strong><p class="menutext">HighScores</p></strong>
-        </center></td>
-        <td class="square v h m"><center>
+        <td class="square h m b menubuttons">
+          <strong><%= link_to 'Highscores', users_path %></strong>
+        </td>
+        <td class="square v h m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to "New Game", new_game_path, class: "menulinks" %></strong>
+            <strong><%= link_to "New Game", new_game_path %></strong>
           <% else %>
-            <strong><p class="menutext">Log In to Start a Game</p></strong>
+            <strong><p>Log In to Start a Game</p></strong>
           <% end %>
-        </center></td>
-        <td class="square h m b"><center>
-          <strong><p class="menutext">Tournaments</p></strong>
-        </center></td>
+        </td>
+        <td class="square h m b menubuttons">
+          <strong><p>Tournaments</p></strong>
+        </td>
       </tr>
       <tr id="row3">
-        <td class="square m b"><center>
-          <strong><p class="menutext">BETA GAMES</p></strong>
-        </center></td>
-        <td class="square v m"><center>
-          <strong><%= link_to "Spectate", games_path, class: "menulinks" %></strong>
-        </center></td>
-        <td class="square m"><center>
-          <strong><%= link_to "Settings", edit_user_registration_path, class: "menulinks" %></strong>
-        </center></td>
+        <td class="square m b menubuttons">
+          <strong><p>BETA GAMES</p></strong>
+        </td>
+        <td class="square v m menubuttons">
+          <strong><%= link_to "Spectate", games_path %></strong>
+        </td>
+        <td class="square m menubuttons">
+          <strong><%= link_to "Settings", edit_user_registration_path %></strong>
+        </td>
       </tr>
     </table>
   </div>
-  <br>
-  <p>If there are any fields you cannot select. You either lack permission to view them or they are not implemented yet!</p>
 </center>
