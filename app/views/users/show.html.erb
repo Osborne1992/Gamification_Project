@@ -19,10 +19,10 @@
       <th colspan="4">Games of Tic Tac Toe</th>
     </tr>
     <tr>
-      <td style='padding: 0px 5px 0px 5px'><br />Played: <%= current_user.games.count %></td>
-      <td style='padding: 0px 5px 0 5px'><br />Won: <%= current_user.win_count %></td>
-      <td style='padding: 0px 5px 0 5px'><br />Drawn: <%= current_user.draw_count %></td>
-      <td style='padding: 0px 5px 0px 5px'><br />Lost: <%= current_user.lose_count %></td>
+      <td style="width:100px"><br /><center>Played: <%= current_user.games.count %></center></td>
+      <td style="width:100px"><br /><center>Won: <%= current_user.win_count %></center></td>
+      <td style="width:100px"><br /><center>Drawn: <%= current_user.draw_count %></center></td>
+      <td style="width:100px"><br /><center>Lost: <%= current_user.lose_count %></center></td>
     </tr>
   </table>
   <br>
@@ -32,10 +32,10 @@
       <th colspan="4">Games Played and/or Playing!</th>
     </tr>
     <tr>
-      <th class="gamelist">Game ID</th>
-      <th class="gamelist">Opponent</th>
-      <th class="gamelist">Created on</th>
-      <th class="gamelist">Result</th>
+      <th class="gamelist" style="width:75px; font-size:12px">Game ID</th>
+      <th class="gamelist" style="width:125px; font-size:12px">Opponent</th>
+      <th class="gamelist" style="width:125px; font-size:12px">Created on</th>
+      <th class="gamelist" style="width:225px; font-size:12px">Result</th>
     </tr>
     <%= render partial: "forshow" %>
   </table>

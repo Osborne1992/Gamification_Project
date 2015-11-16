@@ -1,8 +1,28 @@
 <% current_user.games.reverse_each do |game| %>
 <tr link_to="game">
-  <td align="center" style='padding: 0px 5px 0px 5px'><%= link_to game.id, game %></td>
-  <td style='padding: 0px 5px 0px 5px'><%= link_to "#{if game.player1 == current_user then game.player2.try(:username) else game.player1.try(:username) end}", game %></td>
-  <td style='padding: 0px 5px 0px 5px'><%= link_to game.created_at.strftime('%-d %b %Y'), game %></td>
-  <td align="center" style='padding: 0px 5px 0px 5px'><%= link_to game.result, game %></td>
+  <td align="center" style='padding: 0px 5px 0px 5px'>
+    <br />
+    <%= link_to game.id, game %>
+  </td>
+  <td align="center" style='padding: 0px 5px 0px 5px'>
+    <br />
+    <%= link_to "#{if game.player1 == current_user then game.player2.try(:username) else game.player1.try(:username) end}", game %>
+  </td>
+  <td align="center" style='padding: 0px 5px 0px 5px'>
+    <br />
+    <%= link_to game.created_at.strftime('%-d %b %Y'), game %>
+  </td>
+  <td align="center" style='padding: 0px 5px 0px 5px'>
+    <br />
+    <% if game.winning_player?(current_user) %>
+      <%= link_to "Winner", game %>
+    <% elsif game.drawn_game? %>
+      <%= link_to "Tie Game", game %>
+    <% elsif game.losing_player?(current_user) %>
+      <%= link_to "Loser", game %>
+    <% else %>
+      <%= link_to "#{game.whose_turn.username}'s move", game %>
+    <% end %>
+  </td>
 </tr>
 <% end %>

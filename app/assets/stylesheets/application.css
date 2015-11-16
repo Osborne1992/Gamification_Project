@@ -33,7 +33,7 @@ li {
   text-decoration: none;
   font-size: 12px;
   padding: 5px;
-  border: 1px solid #FF9900;
+  border: 2px solid #FF9900;
   border-radius: 4px;
   background: none;
   color: #FF9900;
@@ -41,6 +41,31 @@ li {
 }
 
 .menubuttons {
+display: table;
+  }  
+
+.menubuttons a {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  background: none;
+  font-size: 15px;
+  height: 125px;
+  width: 125px;
+  transition: all 1s;
+  text-decoration: none;
+}
+
+.menubuttons:hover {
+  animation: neon5 2s ease-in-out infinite alternate;
+}
+
+.menubuttons:hover {
+  color: #ffffff;
+}
+
+.menulinks {
   background: none;
   border: none;
   text-decoration: none;
@@ -86,7 +111,7 @@ input {
   background-color: rgba(0,0,0,0.1);
   color: #FF9900;
   font-family: Audiowide;
-  border: 1px solid #FF9900;
+  border: 2px solid #FF9900;
 }
 
 .TTTButton:hover {
@@ -111,41 +136,49 @@ input {
 a {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 p {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 h1 {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 h2 {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 table {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 td {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 tr {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 th {
   color: #FF9900;
   font-family: Audiowide;
+  transition: all 1s;
 }
 
 a:hover {
@@ -197,12 +230,6 @@ a:hover {
   to {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
   }
-}
-
-.myturn {
-  -webkit-animation: neon5 1.2s ease-in-out infinite alternate;
-  -moz-animation: neon5 1.2s ease-in-out infinite alternate;
-  animation: neon5 1.2s ease-in-out infinite alternate;
 }
 
 

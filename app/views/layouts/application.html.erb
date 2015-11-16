@@ -6,36 +6,38 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<center>
-  <nav>
-    <ul>
-      <li>
-        <%= link_to "Home", root_path, class: "nava" %>
-      </li>
-      <li>
-        <% if user_signed_in? %>
-        <%= link_to "Profile", user_path(current_user.id), class: "nava" %>
-        <% else %>
-        <%= link_to "Log in", new_user_session_path, class: "nava" %>
-        <% end %>
-      </li>
-      <li>
-        <% if user_signed_in? %>
-        <%= link_to "New Game", new_game_path, class: "nava" %>
-        <% else %>
-        <%= link_to 'Register', new_user_registration_path, class: "nava" %>
-        <% end %>
-      </li>
-      <li>
-        <% if user_signed_in? %>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nava" %>
-        <% else %>
-        <% end %>
-      </li>
-    </ul>
-  </nav>
-</center>
 <body>
+<div class="container-nav">
+  <center>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "Home", root_path, class: "nava" %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+          <%= link_to "Profile", user_path(current_user.id), class: "nava" %>
+          <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "nava" %>
+          <% end %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+          <%= link_to "New Game", new_game_path, class: "nava" %>
+          <% else %>
+          <%= link_to 'Register', new_user_registration_path, class: "nava" %>
+          <% end %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nava" %>
+          <% else %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </center>
+  </div>
   <div class="wrap">
     <%= yield %>
   </div>

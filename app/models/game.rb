@@ -30,11 +30,11 @@ class Game < ActiveRecord::Base
   def result
     case
     when winning_game?
-      "#{moves.last.player.username} won!"
+      "#{moves.last.player.username} wins!"
     when drawn_game?
-      "It is a draw!"
+      "Draw!"
     else 
-      "The game is still in progress..."
+      "In progress..."
     end
   end
 

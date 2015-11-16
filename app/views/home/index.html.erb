@@ -6,23 +6,22 @@
   <div id="board">
     <table>
       <tr id="row1">
-        <td class="square m"><center>
+        <td class="square m menubuttons" >
           <% if user_signed_in? %>
-          <strong><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "menubuttons" %></strong><br />
-          <strong><%= current_user.username %></strong>
+            <%= link_to "Logout \n #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
-          <strong><%= link_to 'Login', new_user_session_path, class: "menubuttons" %></strong>
+            <strong><%= link_to 'Login', new_user_session_path, class: "menulinks" %></strong>
           <% end %>
-        </center></td>
+        </td>
         <td class="square v m"><center>
           <% if user_signed_in? %>
-            <strong><%= link_to 'Profile', user_path(current_user.id), class: "menubuttons" %></strong>
+            <strong><%= link_to 'Profile', user_path(current_user.id), class: "menulinks" %></strong>
           <% else %>
-            <strong><%= link_to 'Register', new_user_registration_path, class: "menubuttons" %></strong>
+            <strong><%= link_to 'Register', new_user_registration_path, class: "menulinks" %></strong>
           <% end %>
         </center></td>
         <td class="square m"><center>
-          <strong><%= link_to 'Player List', users_path, class: "menubuttons" %></strong>
+          <strong><%= link_to 'Player List', users_path, class: "menulinks" %></strong>
         </center></td>
       </tr>
       <tr id="row2">
@@ -31,7 +30,7 @@
         </center></td>
         <td class="square v h m"><center>
           <% if user_signed_in? %>
-            <strong><%= link_to "New Game", new_game_path, class: "menubuttons" %></strong>
+            <strong><%= link_to "New Game", new_game_path, class: "menulinks" %></strong>
           <% else %>
             <strong><p class="menutext">Log In to Start a Game</p></strong>
           <% end %>
@@ -45,10 +44,10 @@
           <strong><p class="menutext">BETA GAMES</p></strong>
         </center></td>
         <td class="square v m"><center>
-          <strong><%= link_to "Spectate", games_path, class: "menubuttons" %></strong>
+          <strong><%= link_to "Spectate", games_path, class: "menulinks" %></strong>
         </center></td>
         <td class="square m"><center>
-          <strong><%= link_to "Settings", edit_user_registration_path, class: "menubuttons" %></strong>
+          <strong><%= link_to "Settings", edit_user_registration_path, class: "menulinks" %></strong>
         </center></td>
       </tr>
     </table>

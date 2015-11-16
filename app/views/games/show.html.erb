@@ -3,74 +3,69 @@
   <h2>
     <%= @game.result %>
   </h2>
-    <% if @game.winning_player?(current_user) %>
-      <%= audio_tag 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Fanfare.wav', autoplay: true, controls: false %>
-    <% elsif @game.losing_player?(current_user) %>
-      <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
-    <% end %>
+  <% if @game.winning_player?(current_user) %>
+    <%= audio_tag 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Fanfare.wav', autoplay: true, controls: false %>
+  <% elsif @game.losing_player?(current_user) %>
+    <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
+  <% else %>
+    <p>Playing X, Player 1 is <%=  @game.player1.try(:username) %> and Playing O, Player 2 is <%= @game.player2.try(:username) %></p>
+    <br>
+  <% end %>
   <div id="board">
-      <table>
-        <tr id="row1">
-          <td class="square">
-            <center>
-            <%= board_square_contents(@game, 0) %>
-            </center>
-          </td>
-          <td class="square v">
-            <center>
-            <%= board_square_contents(@game, 1) %>
-            </center>
-          </td>
-          <td class="square">
-            <center>
-            <%= board_square_contents(@game, 2) %>
-            </center>
-          </td>
-        </tr>
-        <tr id="row2">
-          <td class="square h">
-            <center>
-              <%= board_square_contents(@game, 3) %>
-            </center>
-          </td>
-          <td class="square v h">
-            <center>
-            <%= board_square_contents(@game, 4) %>
-            </center>
-          </td>
-          <td class="square h">
-            <center>
-            <%= board_square_contents(@game, 5) %>
-            </center>
-          </td>
-        </tr>
-        <tr id="row3">
-          <td class="square">
-            <center>
-            <%= board_square_contents(@game, 6) %>
-            </center>
-          </td>
-          <td class="square v">
-            <center>
-            <%= board_square_contents(@game, 7) %>
-            </center>
-          </td>
-          <td class="square">
-            <center>
-            <%= board_square_contents(@game, 8) %>
-            </center>
-          </td>
-        </tr>
-      </table>
-    </div>
     <table>
-      <tr>
-        <td><h4>Playing X, Player 1 is...</h4></td>
-        <td><h4><%= @game.player1.try(:username) %>!</h4></td>
+      <tr id="row1">
+        <td class="square">
+          <center>
+            <%= board_square_contents(@game, 0) %>
+          </center>
+        </td>
+        <td class="square v">
+          <center>
+            <%= board_square_contents(@game, 1) %>
+          </center>
+        </td>
+        <td class="square">
+          <center>
+            <%= board_square_contents(@game, 2) %>
+          </center>
+        </td>
       </tr>
-      <tr>
-        <td><h4>Playing O, Player 2 is...</h4></td>
-        <td><h4><%= @game.player2.try(:username) %>!</h4></td>
+      <tr id="row2">
+        <td class="square h">
+          <center>
+            <%= board_square_contents(@game, 3) %>
+          </center>
+        </td>
+        <td class="square v h">
+          <center>
+            <%= board_square_contents(@game, 4) %>
+          </center>
+        </td>
+        <td class="square h">
+          <center>
+            <%= board_square_contents(@game, 5) %>
+          </center>
+        </td>
+      </tr>
+      <tr id="row3">
+        <td class="square">
+          <center>
+            <%= board_square_contents(@game, 6) %>
+          </center>
+        </td>
+        <td class="square v">
+          <center>
+            <%= board_square_contents(@game, 7) %>
+          </center>
+        </td>
+        <td class="square">
+          <center>
+            <%= board_square_contents(@game, 8) %>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 </center>
