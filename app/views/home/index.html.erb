@@ -15,7 +15,7 @@
         </td>
         <td class="square v m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to 'Profile', user_path(current_user.id) %></strong>
+            <strong><%= link_to 'Profile', user_path(current_user) %></strong>
           <% else %>
             <strong><%= link_to 'Register', new_user_registration_path %></strong>
           <% end %>

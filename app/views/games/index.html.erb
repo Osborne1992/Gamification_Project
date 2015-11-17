@@ -1,15 +1,21 @@
 <center>
   <h1>Tic Tac Toe List</h1>
 
-<p>See the games in progress or completed here (in descending order)!</p>
+  <p style="font-size:13px">See the games in progress or completed here (in descending order)!</p>
 
-<table class="showdividers">
-  <tr>
-    <th class="gamelist">Game ID</th>
-    <th class="gamelist v">Who is Player 1</th>
-    <th class="gamelist v">Who is Player 2</th>
-    <th class="gamelist">Match Made On</th>
-  </tr>
+  <table class="showdividers">
+    <tr>
+      <th class="gamelist" style="font-size: 20px; width:130px">Games</th>
+      <th class="gamelist v" style="font-size: 20px; width:130px">Player 1</th>
+      <th class="gamelist v" style="font-size: 20px; width:130px">Player 2</th>
+      <th class="gamelist" style="font-size: 20px; width:130px">Created</th>
+    </tr>
     <%= render @games %>
-</table>
+    <tr>
+      <th class="gamelist" style="font-size: 20px; width:130px">Games</th>
+      <th class="gamelist v" style="font-size: 20px; width:130px">Player 1</th>
+      <th class="gamelist v" style="font-size: 20px; width:130px">Player 2</th>
+      <th class="gamelist" style="font-size: 20px; width:130px">Created</th>
+    </tr>
+  </table>
 </center>
