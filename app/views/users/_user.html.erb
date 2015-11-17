@@ -5,7 +5,7 @@
     <% if user.lose_count.to_i == 0 %>
       ∞
     <% else %>
-      <%=  (user.win_count.to_f / user.lose_count.to_f).round(2) %>
+      <%=  user.win_lose_ratio %>
     <% end %>  
   </td>
   <td align="center"><br /><%= user.win_count %>/<%= user.draw_count %>/<%= user.lose_count %></td>

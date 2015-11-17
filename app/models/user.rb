@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
     games.select { |game| game.drawn_game? }.count
   end
 
+  def win_lose_ratio
+    (win_count.to_d / lose_count.to_d).round(2)
+  end
+
  private
  def set_default_role
    self.role ||= Role.find_by_name('registered')
