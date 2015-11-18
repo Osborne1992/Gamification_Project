@@ -1,10 +1,10 @@
 <center>
   <h1>Pick a Combatant!</h1>
   <br>
-  <%= form_for @game do |f| %>
+  <%= form_for @c4_game do |f| %>
   <table>
     <tr>
-      <td align="right"><%= f.label :player1_id, "Player 1:" %></td>
+      <td align="right"><%= f.label :player1_id, "You are Player 1:" %></td>
       <td>
         <% if user_signed_in? %>
           <%= current_user.username %>
@@ -15,7 +15,7 @@
       </td>
     </tr>
     <tr>
-      <td align="right"><br /><%= f.label :player2_id, "Player 2:" %></td>
+      <td align="right"><br /><%= f.label :player2_id, "Pick Player 2:" %></td>
       <td><br /><%= f.collection_select :player2_id, User.all.reject {|user| user == current_user}, :id, :username %></td>
     </tr>
   </table>

@@ -35,8 +35,13 @@ class User < ActiveRecord::Base
   end
 
   def win_lose_ratio
-    (win_count.to_d / lose_count.to_d).round(2)
+    if lose_count == 0
+      win_count > 0 ? 1 : 0 
+    else
+      (win_count.to_f / lose_count.to_f).round(2)
+    end
   end
+
 
  private
  def set_default_role

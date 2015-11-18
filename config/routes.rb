@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources 'moves'
   resources 'players'
   resources 'users'
+  resources 'c4_games'
+  resources 'c4_moves'
+  resources 'beta_home'
+  resources 'uttt_games'
+  resources 'roshambo_games'
+  resources 'roshambo_moves'
 
   root to: 'home#index'
 

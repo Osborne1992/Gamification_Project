@@ -1,0 +1,19 @@
+<center>
+  <h1>LET'S GET READY TO RUMBLE!</h1>
+  <h2>
+    <%= @c4_game.result %>
+  </h2>
+  <% if @c4_game.winning_player?(current_user) %>
+    <%= audio_tag 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Fanfare.wav', autoplay: true, controls: false %>
+  <% elsif @c4_game.losing_player?(current_user) %>
+    <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
+  <% else %>
+    <p>Playing (P1), Player 1 is <%=  @c4_game.player1.try(:username) %> and Playing (P2), Player 2 is <%= @c4_game.player2.try(:username) %></p>
+    <br>
+  <% end %>
+
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</center>

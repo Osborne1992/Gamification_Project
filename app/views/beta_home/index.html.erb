@@ -1,5 +1,5 @@
 <center>
-  <h1>Gamification Hub</h1>
+  <h1>Beta Games Hub</h1>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <br>
@@ -21,30 +21,37 @@
           <% end %>
         </td>
         <td class="square m menubuttons">
-          <strong><p>Friend List</p></strong>
         </td>
       </tr>
       <tr id="row2">
         <td class="square h m b menubuttons">
-          <strong><%= link_to 'Highscores', users_path %></strong>
-        </td>
-        <td class="square v h m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to "New Game", new_game_path %></strong>
+            <strong><%= link_to "Connect 4", c4_games_path %></strong>
           <% else %>
-            <strong><p>Login to Start a Game</p></strong>
+            <strong><p>Log In to Start Connect 4</p></strong>
           <% end %>
         </td>
+        <td class="square v h m menubuttons">
+        <% if user_signed_in? %>
+          <strong><%= link_to "Ultimate TicTacToe", uttt_games_path %></strong>
+        <% else %>
+          <strong><p>Log In to Start Ultimate TicTacToe</p></strong>
+        <% end %>
+        </td>
         <td class="square h m b menubuttons">
-          <strong><p>Tournaments</p></strong>
+        <% if user_signed_in? %>
+          <strong><%= link_to "Roshambo", roshambo_games_path %></strong>
+        <% else %>
+          <strong><p>Log In to Start Roshambo</p></strong>
+        <% end %>
         </td>
       </tr>
       <tr id="row3">
         <td class="square m b menubuttons">
-          <strong><%= link_to "Beta Games", beta_home_index_path %></strong>
+        <strong><%= link_to "Return to Normality", root_path %></strong>
         </td>
         <td class="square v m menubuttons">
-          <strong><%= link_to "Spectate", games_path %></strong>
+          <strong><%= link_to "Spectate", c4_games_path %></strong>
         </td>
         <td class="square m menubuttons">
           <strong><%= link_to "Settings", edit_user_registration_path %></strong>

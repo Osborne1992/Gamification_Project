@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all.order(:id)
+    @users = User.all.sort { |a, b| [b.win_lose_ratio, b.lose_count, a.username] <=> [a.win_lose_ratio, a.lose_count, b.username] }
   end
 
   def show
