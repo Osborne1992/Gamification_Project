@@ -15,11 +15,11 @@
   <td align="center">
     <br />
     <% if game.winning_player?(current_user) %>
-      <%= link_to "Winner", game %>
+      <%= link_to "Complete - Won", game %>
     <% elsif game.drawn_game? %>
-      <%= link_to "Draw", game %>
+      <%= link_to "Complete - Drew", game %>
     <% elsif game.losing_player?(current_user) %>
-      <%= link_to "Loser", game %>
+      <%= link_to "Complete - Lost", game %>
     <% else %>
       <%= link_to "#{game.whose_turn.username}'s move", game %>
     <% end %>

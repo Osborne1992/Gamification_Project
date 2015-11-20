@@ -1,9 +1,9 @@
 <center>
-  <h2>Editing <%= current_user.username %>'s Profile</h2>
+  <h1>Editing <%= current_user.username %>'s Profile</h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+  
   <table>
     <tr>
       <th colspan="2">Make changes to your public data</th>
@@ -50,7 +50,7 @@
     <%= f.submit "Update", class: "nava" %> <%= link_to "Cancel", :back, class: "nava" %>
   </div>
   <% end %>
-  
+  <br>
   <br>
   <br>
   <br>
@@ -58,7 +58,7 @@
   <table>
     <tr>
       <td>Unhappy with this site?</td>
-      <td><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "nava" %></td>
+      <td><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "edit_profile" %></td>
     </tr>
   </table>
 

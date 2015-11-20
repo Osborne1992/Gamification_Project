@@ -8,53 +8,57 @@
       <tr id="row1">
         <td class="square m menubuttons" >
           <% if user_signed_in? %>
-            <%= link_to "Logout \n #{current_user.username}", destroy_user_session_path, method: :delete %>
+          <%= link_to "Logout \n #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
-            <strong><%= link_to 'Login', new_user_session_path %></strong>
+          <%= link_to 'Login', new_user_session_path %>
           <% end %>
         </td>
         <td class="square v m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to 'Profile', user_path(current_user) %></strong>
+          <%= link_to 'Profile', user_path(current_user) %>
           <% else %>
-            <strong><%= link_to 'Register', new_user_registration_path %></strong>
+          <%= link_to 'Register', new_user_registration_path %>
           <% end %>
         </td>
         <td class="square m menubuttons">
+          <p><i style="font-size:10px">feature coming soon</i></p>
         </td>
       </tr>
       <tr id="row2">
         <td class="square h m b menubuttons">
-          <% if user_signed_in? %>
-            <strong><%= link_to "Connect 4", c4_games_path %></strong>
-          <% else %>
-            <strong><p>Log In to Start Connect 4</p></strong>
-          <% end %>
+          <%# if user_signed_in? %>
+            <%#= link_to "Connect 4", c4_games_path %>
+          <%# else %>
+          <p>Connect 4
+          <i style="font-size:10px">feature unavailable</i></p>
+          <%# end %>
         </td>
         <td class="square v h m menubuttons">
-        <% if user_signed_in? %>
-          <strong><%= link_to "Ultimate TicTacToe", uttt_games_path %></strong>
-        <% else %>
-          <strong><p>Log In to Start Ultimate TicTacToe</p></strong>
-        <% end %>
+          <%# if user_signed_in? %>
+            <%#= link_to "Ultimate TicTacToe", uttt_games_path %>
+          <%# else %>
+            <p>Ultimate TicTacToe 
+            <i style="font-size:10px">feature unavailable</i></p>
+          <%# end %>
         </td>
         <td class="square h m b menubuttons">
-        <% if user_signed_in? %>
-          <strong><%= link_to "Roshambo", roshambo_games_path %></strong>
-        <% else %>
-          <strong><p>Log In to Start Roshambo</p></strong>
-        <% end %>
+          <%# if user_signed_in? %>
+            <%#= link_to "Roshambo", new_roshambo_game_path %>
+          <%# else %>
+          <p>Roshambo
+          <i style="font-size:10px">feature unavailable</i></p>
+          <%# end %>
         </td>
       </tr>
       <tr id="row3">
         <td class="square m b menubuttons">
-        <strong><%= link_to "Return to Normality", root_path %></strong>
+          <%= link_to "Return to Normality", root_path %>
         </td>
         <td class="square v m menubuttons">
-          <strong><%= link_to "Spectate", c4_games_path %></strong>
+          <p><i style="font-size:10px">feature coming soon</i></p>
         </td>
         <td class="square m menubuttons">
-          <strong><%= link_to "Settings", edit_user_registration_path %></strong>
+          <%= link_to "Settings", edit_user_registration_path %>
         </td>
       </tr>
     </table>

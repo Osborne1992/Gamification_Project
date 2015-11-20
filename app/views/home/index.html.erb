@@ -10,44 +10,56 @@
           <% if user_signed_in? %>
             <%= link_to "Logout \n #{current_user.username}", destroy_user_session_path, method: :delete %>
           <% else %>
-            <strong><%= link_to 'Login', new_user_session_path %></strong>
+            <%= link_to 'Login', new_user_session_path %>
           <% end %>
         </td>
         <td class="square v m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to 'Profile', user_path(current_user) %></strong>
+            <%= link_to 'Profile', user_path(current_user) %>
           <% else %>
-            <strong><%= link_to 'Register', new_user_registration_path %></strong>
+            <%= link_to 'Register', new_user_registration_path %>
           <% end %>
         </td>
         <td class="square m menubuttons">
-          <strong><p>Friend List</p></strong>
+          <% if user_signed_in? %>
+            <p>Following
+            <i style="font-size:10px">feature unavailable</i></p>
+          <% else %>
+          <% end %>
         </td>
       </tr>
       <tr id="row2">
         <td class="square h m b menubuttons">
-          <strong><%= link_to 'Highscores', users_path %></strong>
+          <%= link_to 'TicTacToe Highscores', users_path %>
         </td>
         <td class="square v h m menubuttons">
           <% if user_signed_in? %>
-            <strong><%= link_to "New Game", new_game_path %></strong>
+            <%= link_to "Play Some TicTacToe", new_game_path %>
           <% else %>
-            <strong><p>Login to Start a Game</p></strong>
+            <p>Login to Play TicTacToe</p>
           <% end %>
         </td>
         <td class="square h m b menubuttons">
-          <strong><p>Tournaments</p></strong>
+          <p>Tournaments
+          <i style="font-size:10px">feature unavailable</i></p>
         </td>
       </tr>
       <tr id="row3">
         <td class="square m b menubuttons">
-          <strong><%= link_to "Beta Games", beta_home_index_path %></strong>
+          <% if user_signed_in? %>
+            <%= link_to "Beta Games", beta_home_index_path %>
+          <% else %>
+            <p>Login to See Beta Games</p>
+          <% end %>
         </td>
         <td class="square v m menubuttons">
-          <strong><%= link_to "Spectate", games_path %></strong>
+          <%= link_to "Spectate TicTacToe", games_path %>
         </td>
         <td class="square m menubuttons">
-          <strong><%= link_to "Settings", edit_user_registration_path %></strong>
+          <% if user_signed_in? %>
+            <%= link_to "Settings", edit_user_registration_path %>
+          <% else %>
+          <% end %>
         </td>
       </tr>
     </table>

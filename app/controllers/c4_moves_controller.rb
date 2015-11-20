@@ -1,7 +1,7 @@
 class MovesController < ApplicationController
 
   def new
-    @c4_move = C4_Move.new
+    @c4_move = C4Move.new
   end
 
   def create
@@ -10,7 +10,7 @@ class MovesController < ApplicationController
 
   private
   def c4_move_params
-    params.require(:c4_move).permit(:player, :square, :symbol)
+    params.require(:c4_move).permit(:player, :square, :token)
   end
 
 end

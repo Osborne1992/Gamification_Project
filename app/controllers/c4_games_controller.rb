@@ -1,7 +1,7 @@
 class C4GamesController < ApplicationController
 
   def index
-
+    @c4_games = C4Game.all.order('id desc')
   end
 
   def new

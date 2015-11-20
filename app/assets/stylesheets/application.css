@@ -14,10 +14,49 @@ body {
   src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
-.wrap {
-  margin-left:auto;
-  margin-right:auto;
-  width:960px;
+.box {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.box-1 {
+  width: 10%;
+}
+
+.box-2 {
+  width: 20%;
+}
+
+.box-3 {
+  width: 30%;
+}
+
+.box-4 {
+  width: 40%;  
+}
+
+.box-5 {
+  width: 50%;  
+}
+
+.box-6 {
+  width: 60%;
+}
+
+.box-7 {
+  width: 70%;
+}
+
+.box-8 {
+  width: 80%;
+}
+
+.box-9 {
+  width: 90%;
+}
+
+.box-10 {
+  width: 100%;
 }
 
 ul {

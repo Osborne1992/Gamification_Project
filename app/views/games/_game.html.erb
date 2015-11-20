@@ -1,6 +1,7 @@
 <tr class="lines">
-  <td align="center", class="gamelist h"><br /><%= link_to "View Game #{game.id}", game_path(game) %></td>
-  <td align="center", class="gamelist v h"><br /><%= game.player1.try(:username) %></td>
-  <td align="center", class="gamelist v h"><br /><%= game.player2.try(:username) %></td>
-  <td align="center", class="gamelist h"><br /><%= game.created_at.strftime("%-d %b %Y") %></td>
+  <td align="center" class="gamelist h"><br />Game <%= game.id %> <br><i><%= link_to "(view)", game_path(game) %></i></td>
+  <td align="center" class="gamelist v h"><br /><%= game.player1.try(:username) %></td>
+  <td align="center" class="gamelist v h"><br /><%= game.player2.try(:username) %></td>
+  <td align="center" class="gamelist v h"><br /><%= game.created_at.strftime("%-d %b %Y") %></td>
+  <td align="center" class="gamelist h"><br /><% if game.finished? %>Finished <i><%= link_to "(view)", game_path(game) %></i><% else %>In Progress<br><i> <%= link_to "(view)" %></i><% end %></td>
 </tr>

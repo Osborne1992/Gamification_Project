@@ -8,9 +8,9 @@
   <% elsif @game.losing_player?(current_user) %>
     <%= audio_tag 'http://wompwompwomp.com/audio/sad-trombone.m4a', autoplay: true, controls: false %>
   <% else %>
-    <p>Playing X, Player 1 is <%=  @game.player1.try(:username) %> and Playing O, Player 2 is <%= @game.player2.try(:username) %></p>
-    <br>
   <% end %>
+  <p>Playing X, Player 1 is <%=  @game.player1.try(:username) %> and Playing O, Player 2 is <%= @game.player2.try(:username) %></p>
+    <br>
   <div id="board">
     <table>
       <tr id="row1">

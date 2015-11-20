@@ -5,7 +5,7 @@ class C4Game < ActiveRecord::Base
   has_many :c4_moves
 
 
-  WINNING_LINES = [  ]
+  WINNING_LINES = [ [1 => 0, 1 => 1, 1 => 2, 1 => 3, 1 => 4], ]
 
   def finished?
     winning_game? || drawn_game?
@@ -92,7 +92,7 @@ class C4Game < ActiveRecord::Base
   private
   def winning_game?
     !!WINNING_LINES.detect do |winning_line|
-      %w((P1)(P1)(P1) (P2)(P2)(P2)).include?(winning_line.map { |e| board[e] }.join)
+      %w((P1)(P1)(P1)(P1) (P2)(P2)(P2)(P2)).include?(winning_line.map { |e| board[e] }.join)
     end
   end
 
